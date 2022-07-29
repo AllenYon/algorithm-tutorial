@@ -1,4 +1,4 @@
-package com.alin.algorithm.array;
+package io.github.alin.algorithm;
 
 
 import java.util.ArrayList;
