@@ -1,4 +1,4 @@
-package io.github.alin.algorithm;
+package io.github.alin.algorithm.array;
 
 public class 删除排序数组中的重复项 {
 

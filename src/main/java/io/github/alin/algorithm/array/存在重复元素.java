@@ -1,4 +1,4 @@
-package io.github.alin.algorithm;
+package io.github.alin.algorithm.array;
 
 import java.util.HashSet;
 import java.util.Set;

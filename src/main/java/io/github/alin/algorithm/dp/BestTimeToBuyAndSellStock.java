@@ -1,4 +1,4 @@
-package io.github.alin.algorithm;
+package io.github.alin.algorithm.dp;
 
 
 public class BestTimeToBuyAndSellStock {

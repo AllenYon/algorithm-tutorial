@@ -1,0 +1,50 @@
+package io.github.alin.algorithm.dp;
+
+/**
+ * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+ * <p>
+ * 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+ * <p>
+ * https://leetcode.cn/leetbook/read/top-interview-questions-easy/xn854d/
+ */
+public class 爬楼梯 {
+
+    public static void main(String[] args) {
+
+        System.out.println(climbStairs(1));
+        System.out.println(climbStairs(2));
+        System.out.println(climbStairs(5));
+        System.out.println(climbStairs(40));
+    }
+
+    /**
+     * f(1)=1 f(2)=2  f(3)=f(1)+f(2)
+     * f(n) = f(n-2)+f(n-1)
+     */
+    public static int climbStairs(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        if (n <= 2) {
+            return 2;
+        }
+        return climbStairs(n - 2) + climbStairs(n - 1);
+    }
+
+    public static int climbStairsV2(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        if (n <= 2) {
+            return 2;
+        }
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        return dp[n];
+    }
+}

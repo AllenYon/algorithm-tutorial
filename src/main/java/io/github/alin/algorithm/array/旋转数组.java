@@ -1,4 +1,4 @@
-package io.github.alin.algorithm;
+package io.github.alin.algorithm.array;
 
 /**
  * 输入: nums = [1,2,3,4,5,6,7], k = 3
