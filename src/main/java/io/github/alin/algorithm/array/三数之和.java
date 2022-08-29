@@ -22,18 +22,13 @@ public class 三数之和 {
 
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
-
         if (nums == null || nums.length < 3) return list;
-
         int len = nums.length;
         Arrays.sort(nums);
-
         for (int i = 0; i < len; i++) {
             if (nums[i] > 0) break;
-
             // 去重
             if (i > 0 && nums[i] == nums[i - 1]) continue;
-
             int L = i + 1;
             int R = len - 1;
             while (L < R) {
@@ -51,7 +46,6 @@ public class 三数之和 {
                 }
             }
         }
-
         return list;
     }
 
