@@ -1,6 +1,8 @@
 package io.github.alin.algorithm.tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TreeNode {
@@ -36,6 +38,42 @@ public class TreeNode {
         result.add(root.val);
         preorder2(root.left, result);
         preorder2(root.right, result);
+    }
+
+    public static String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        serialize(root, sb);
+        return sb.toString();
+    }
+
+    public static void serialize(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append("#").append(",");
+            return;
+        }
+        sb.append(root.val).append(",");
+        serialize(root.left, sb);
+        serialize(root.right, sb);
+    }
+
+    public static TreeNode deserialize(String data) {
+        LinkedList<String> nodes = new LinkedList<>();
+        Collections.addAll(nodes, data.split(","));
+        return deserialize(nodes);
+    }
+
+    public static TreeNode deserialize(LinkedList<String> nodes) {
+        if (nodes.isEmpty()) {
+            return null;
+        }
+        String val = nodes.removeFirst();
+        if ("#".equals(val)) {
+            return null;
+        }
+        TreeNode root = new TreeNode(Integer.parseInt(val));
+        root.left = deserialize(nodes);
+        root.right = deserialize(nodes);
+        return root;
     }
 
 }

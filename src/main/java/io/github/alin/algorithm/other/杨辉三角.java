@@ -1,14 +1,13 @@
 package io.github.alin.algorithm.other;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class 杨辉三角 {
 
     public static void main(String[] args) {
         System.out.println(11);
         System.out.println(Arrays.toString(generate(5).toArray()));
+        System.out.println(Arrays.toString(generate(5).get(3).toArray()));
     }
 
     public static List<List<Integer>> generate(int numRows) {
@@ -21,6 +20,14 @@ public class 杨辉三角 {
             }
             res.add(new ArrayList<>(row));
         }
+
+        String s ="";
+        String[] ss = s.trim().split(" ");
+        int a =  ss[ss.length-1].length();
+
+        Map<String,String> m =new HashMap<>();
+//        m.get("").equals(c)
+//        m.put()
         return res;
     }
 
